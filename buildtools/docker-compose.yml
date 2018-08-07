@@ -1,0 +1,29 @@
+version: '2'
+services:
+  dbserver:
+    build: ./mysql
+    hostname: dbserver
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    expose:
+      - "3306"
+    ports:
+      - '3306:3306'
+    networks:
+      - my_network
+  webserver:
+    hostname: webserver
+    build: ./myweb
+    ports:
+      - '8001:80'
+    depends_on:
+      - dbserver
+    networks:
+      - my_network
+networks:
+  my_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.0.0/24
+          gateway: 172.16.0.1
