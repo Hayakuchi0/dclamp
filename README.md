@@ -13,7 +13,7 @@ Docker-compose yml called in shell script "buildDocker.sh", then structure docke
 When Structure docker image, called startup script "init.sh". That is shell script for example yum call to intall apache, php, etc, and startup config. And WebServer booted by "debugDocker.sh" in last.
 
 File tree is as follows:
-
+```
 buildtools
 ├── buildDocker.sh
 ├── docker-compose.yml
@@ -23,6 +23,7 @@ buildtools
     ├── debugDocker.sh
     ├── Dockerfile
     └── init.sh
+```
 
 ## Requirement
 * docker
