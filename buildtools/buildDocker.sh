@@ -1,5 +1,5 @@
 #!/bin/sh
-docker_kill myserver_apache2
+docker kill myserver_apache2
 docker rmi -f buildtools_webserver:latest
 docker-compose down
 docker system prune
