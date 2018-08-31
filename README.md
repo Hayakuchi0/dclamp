@@ -2,10 +2,13 @@ dclamp
 ====
 
 ## Overview
+
 Docker script of use CentOS for LAMP environment.
 On the premise of developing environment
 
+
 ## Description
+
 This script is build tool for structure LAMP developing environment easily,and rewrite conforming with your project.
 Based by CentOS.
 Structured shell script and Dockerfile and Docker-compose yml.
@@ -13,9 +16,11 @@ Docker-compose yml called in shell script "buildDocker.sh", then structure docke
 When Structure docker image, called startup script "init.sh". That is shell script for example yum call to intall apache, php, etc, and startup config. And WebServer booted by "debugDocker.sh" in last.
 
 File tree is as follows:
+
 ```
 buildtools
 ├── buildDocker.sh
+├── downDocker.sh
 ├── docker-compose.yml
 ├── mysql
 │   └── Dockerfile
@@ -25,16 +30,19 @@ buildtools
     └── init.sh
 ```
 
+
 ## Requirement
+
 * docker
 * docker-compose
 * git
-* xdotool
+
 for example install ubuntu.
 
 ```
 # apt install docker docker-compose git
 ```
+
 
 ## How to Use
 
@@ -46,14 +54,11 @@ $ cd dclamp/buildtools
 # ./buildDocker.sh
 ```
 
-
 ### Down Server
 
 ```
-# docker kill webserver_apache2
-# docker-compose down
+# ./downDocker.sh
 ```
-
 
 ### Access Example
 
@@ -69,8 +74,11 @@ $ curl localhost:8001
 $ mysql -u root -h dbserver -pexample
 ```
 
+
 ## Licence
+
 This script licenced by MIT licence.
 
 ## Author
+
 Hayakuchi0
