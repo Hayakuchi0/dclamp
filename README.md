@@ -12,7 +12,7 @@ On the premise of developing environment
 This script is build tool for structure LAMP developing environment easily,and rewrite conforming with your project.
 Based by CentOS.
 Structured shell script and Dockerfile and Docker-compose yml.
-Docker-compose yml called in shell script "buildDocker.sh", then structure docker image by each Dockerfile.
+Docker-compose yml called in shell script "buildDocker.sh", then structure docker image by each Dockerfile. And structure dbserver with "init.sql" and "sqlinit.sh".
 When Structure docker image, called startup script "init.sh". That is shell script for example yum call to intall apache, php, etc, and startup config. And WebServer booted by "debugDocker.sh" in last.
 
 File tree is as follows:
@@ -27,6 +27,8 @@ buildtools
 └── myweb
     ├── debugDocker.sh
     ├── Dockerfile
+    ├── sqlinit.sh
+    ├── init.sql
     └── init.sh
 ```
 

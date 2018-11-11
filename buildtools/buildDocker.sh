@@ -1,8 +1,5 @@
 #!/bin/sh
-#docker kill myserver_apache2
-#docker rmi -f buildtools_webserver:latest
-#docker-compose down
-#docker system prune
 ./downDocker.sh
 docker-compose up -d --build
 ./myweb/debugDocker.sh
+docker exec -it myserver_apache2 /bin/bash /tmp/sqlinit.sh
